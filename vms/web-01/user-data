@@ -1,0 +1,28 @@
+#cloud-config
+hostname: web-01
+preserve_hostname: false
+manage_etc_hosts: false
+users:
+  - name: ubuntu
+    shell: /bin/bash
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    lock_passwd: true
+    ssh_authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILm3GdiFnFX7OQVKdJb33cYnCs8vrHPpWbp6eLclminb uslugi-sieciowe
+ssh_pwauth: false
+package_update: true
+packages:
+  - open-vm-tools
+  - curl
+  - ca-certificates
+  - git
+  - jq
+write_files:
+  - path: /etc/hosts
+    append: true
+    content: |
+      192.168.5.10 mon-01
+      192.168.5.11 web-01
+      192.168.5.12 web-02
+runcmd:
+  - systemctl enable --now open-vm-tools

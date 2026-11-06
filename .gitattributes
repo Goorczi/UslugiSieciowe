@@ -10,3 +10,7 @@
 .env.example text eol=lf
 *.png binary
 *.jpg binary
+user-data      text eol=lf
+meta-data      text eol=lf
+network-config text eol=lf
+*.ps1          text eol=lf
