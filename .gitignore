@@ -1,0 +1,23 @@
+# sekrety
+.env
+*.pem
+*.key
+*.crt
+id_*
+# VMware / obrazy
+*.vmdk
+*.vmx
+*.vmxf
+*.vmem
+*.vmsn
+*.vmss
+*.nvram
+*.lck/
+*.iso
+*.ova
+*.ovf
+# system / edytory
+Thumbs.db
+.DS_Store
+*.swp
+.vscode/
